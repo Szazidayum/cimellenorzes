@@ -30,7 +30,7 @@ public class Cimellenorzes {
             
         }else{
             haromHossz=false;
-            assert(haromHossz=false):"Nem adta meg a cím egyik kulcsfontosságú részét!";
+            assert (haromHossz==false) : "Nem adta meg a cím egyik kulcsfontosságú részét!";
         }
 //        System.out.println("A cím 3 szóból áll-e: "+haromHossz);
         return haromHossz;
@@ -44,7 +44,7 @@ public class Cimellenorzes {
            nagybetu=true;
         }else{
             nagybetu=false;
-            assert(nagybetu=false) : "A cím egy főnév, ezért nagybetűvel kell kezdeni!";
+            assert(nagybetu==false) : "A cím egy főnév, ezért nagybetűvel kell kezdeni!";
         }
 //        System.out.println("Az első betű nagybetű-e: "+nagybetu);
         return nagybetu;
@@ -52,12 +52,14 @@ public class Cimellenorzes {
         
     static boolean MasodikSzo(String[] reszek){
 //      Második szó: utca,tér,út?
-        boolean masodikSzoJo=false;
+        boolean masodikSzoJo;
 //        System.out.println(reszek[1]);
         if("utca".equals(reszek[1]) || "tér".equals(reszek[1]) || "út".equals(reszek[1])){
             masodikSzoJo=true;
-        }
-        assert(masodikSzoJo=false):"A címben szerepelnie kell az 'utca', 'tér' vagy 'út' megnevezésnek!";
+        }else{
+            masodikSzoJo=false;
+            assert(masodikSzoJo==false):"A címben szerepelnie kell az 'utca', 'tér' vagy 'út' megnevezésnek!";
+        }  
 //        System.out.println("A második szó jó: "+masodikSzoJo);
         return masodikSzoJo;
     }
@@ -74,7 +76,7 @@ public class Cimellenorzes {
             pontE=true;
         }else{
             pontE=false;
-            assert(pontE=false):"A címnek egy pontra ('.') kell végződnie!";
+            assert(pontE==false):"A címnek egy pontra ('.') kell végződnie!";
         }
 //           System.out.println("Az utolsó karakter pont-e: "+pontE);
            return pontE;
@@ -92,11 +94,12 @@ public class Cimellenorzes {
 //           System.out.println(harmadikS);
         int szam=Integer.parseInt(harmadikS);
 //           System.out.println(szam);
-        assert(szam<0 || szam>500):"Nem lehetséges házszám!";
+        
         if(0<szam && szam<501){
             szamE=true;
         }else{
             szamE=false;
+            assert(szamE==false):"Nem lehetséges házszám!";
         }
 //           System.out.println("A szám megfelelő: "+szamE);
            return szamE;
